@@ -6,8 +6,11 @@
 package com.base.engine;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipFile;
 import org.lwjgl.opengl.Display;
 
 /**
@@ -70,7 +73,7 @@ public class MainComponent {
             
             while(unprocessedTime > frameTime){
                 render = true;
-                
+                                          
                 unprocessedTime -= frameTime;
                 
                 if(Window.isCloseRequested()){
@@ -111,8 +114,6 @@ public class MainComponent {
     private void cleanUp(){
        Window.dispose();
     }
-    
-    
     
     public static void main(String[] args){
         Window.createWindow(WIDTH, HEIGHT, TITLE);
